@@ -1,0 +1,37 @@
+<h3>App using Angular 2</h3>
+<!--<app-home></app-home>
+<employees></employees>-->
+<table class="table table-bordered">
+  <thead> 
+    <th>Emp No.</th>
+    <th>Name</th>
+    <th>City</th>
+  </thead>
+  <tbody>
+    <!--<tr *ngFor='let emp of listofEmployees'(click)=showEmployee(emp) [class.active]='emp ===SelectedEmployee'>-->
+      <tr *ngFor='let emp of gridData'(click)=showEmployee(emp) [class.selected]='emp ===SelectedEmployee'>
+      <td>{{emp.emp_no}}</td>
+      <td>{{emp.fname}} {{emp.lname}}</td>
+      <td>{{emp.city}}</td>
+    </tr>
+  </tbody>
+</table>
+<!--<emp-details [employeeData]="employeeFromAppComponent">
+
+</emp-details>-->
+<!--input type="submit" value="Set Grey Theme" [ngClass]= 'myStyleObject'/>-->
+<div class="col-md-3">
+  <create-employee (employeeCreated) = 'onEmployeeCreated($event)'></create-employee><!-- Child component call along with custom event(employeeCreated) -->
+</div>
+<div class="col-md-3">
+  <emp-details [employeeSelected]="SelectedEmployee">
+
+  </emp-details>
+</div>
+
+<div class="col-md-3">
+  <label [ngClass]= 'selectedTheme'> Show me the Label with theme </label>
+  <input type="submit" value="Set Grey Theme" (click)= setGreyTheme()/>
+  <input type="submit" value="Set Pink Theme" (click)= setPinkTheme()/>
+  <input type="submit" value="Change Theme" (click)= toggleTheme()/>
+</div>

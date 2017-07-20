@@ -1,0 +1,46 @@
+<h3>
+  Employee Component!
+</h3>
+<h4>{{ title }}</h4>
+<ul>
+  <li>{{myNumber}}</li>
+  <li>{{myBoolean}}</li>
+</ul>
+<br>
+<hr>
+<ul>
+  <li *ngFor = "let actor of actors">
+    {{actor}}
+  </li>
+</ul>
+<br>
+<table class="table table-bordered">
+  <thead> 
+    <th>Emp No.</th>
+    <th>Name</th>
+    <th>City</th>
+  </thead>
+  <tbody>
+    <tr *ngFor='let emp of listofEmployees'>
+      <td>{{emp.emp_no}}</td>
+      <td>{{emp.fname}} {{emp.lname}}</td>
+      <td>{{emp.city}}</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<hr>
+City Name : {{ cityName }}
+<br>
+<hr>
+Change City : <input type="text" [(ngModel)]="cityName"/>
+<input type="submit" (click)=submitCity()>
+<br>
+<hr>
+2 way of DB
+<br>
+{{ employee | json }}
+<br>
+<input type="text" [(ngModel)]="employee.emp_no"/>
+<input type="text" [(ngModel)]="employee.fname"/>
+<input type="text" [(ngModel)]="employee.lname"/>

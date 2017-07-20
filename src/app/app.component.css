@@ -1,0 +1,12 @@
+.selected {
+    color: blue;
+    background-color: peachpuff;
+}
+.GreyBackground{
+    background: grey;
+    color:white;
+}
+.pinkBackground{
+    background: pink;
+    color:white;
+}
